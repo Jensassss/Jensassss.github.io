@@ -1,11 +1,234 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>My Homepage</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wenhe Si | GitHub Page</title>
+  <style>
+    :root {
+      --bg: #f5f8fb;
+      --card: #ffffff;
+      --line: #d0d7de;
+      --text: #1f2328;
+      --muted: #59636e;
+      --accent: #0969da;
+      --avatar-a: #6aa7ff;
+      --avatar-b: #8ec5ff;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: "IBM Plex Sans", "Segoe UI", sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at 12% 0%, #dceeff 0%, rgba(220, 238, 255, 0) 34%),
+        radial-gradient(circle at 85% 100%, #ebf6f0 0%, rgba(235, 246, 240, 0) 30%),
+        var(--bg);
+    }
+
+    .topbar {
+      border-bottom: 1px solid var(--line);
+      background: #f6f8fa;
+      padding: 12px 20px;
+      font-size: 14px;
+      color: var(--muted);
+    }
+
+    .wrap {
+      max-width: 1100px;
+      margin: 24px auto 44px;
+      padding: 0 18px;
+      display: grid;
+      grid-template-columns: 300px 1fr;
+      gap: 24px;
+      align-items: start;
+      animation: rise 0.65s ease;
+    }
+
+    .card {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      box-shadow: 0 6px 18px rgba(31, 35, 40, 0.06);
+    }
+
+    .profile {
+      padding: 20px;
+      text-align: center;
+    }
+
+    .avatar {
+      width: 200px;
+      height: 200px;
+      margin: 4px auto 18px;
+      border-radius: 50%;
+      border: 3px solid #ffffff;
+      background: linear-gradient(150deg, var(--avatar-a), var(--avatar-b));
+      display: grid;
+      place-items: center;
+      font-size: 62px;
+      font-weight: 700;
+      color: #ffffff;
+      letter-spacing: 2px;
+      box-shadow: 0 10px 24px rgba(74, 121, 196, 0.25);
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 34px;
+      line-height: 1.12;
+      font-weight: 700;
+      text-align: left;
+    }
+
+    .name {
+      font-size: 34px;
+      margin: 0 0 8px;
+      line-height: 1.15;
+      text-align: left;
+    }
+
+    .email {
+      margin: 0;
+      text-align: left;
+      font-size: 17px;
+      color: var(--muted);
+      word-break: break-word;
+    }
+
+    .readme {
+      padding: 24px 28px;
+    }
+
+    .repo-tag {
+      font-size: 13px;
+      color: var(--muted);
+      margin-bottom: 12px;
+      display: inline-block;
+      padding: 4px 10px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: #f6f8fa;
+    }
+
+    .divider {
+      border: 0;
+      border-top: 1px solid var(--line);
+      margin: 16px 0 18px;
+    }
+
+    .block {
+      margin: 0 0 16px;
+      font-size: 18px;
+      line-height: 1.6;
+    }
+
+    .label {
+      color: var(--muted);
+      font-size: 15px;
+      margin-right: 8px;
+    }
+
+    .value {
+      font-weight: 600;
+      color: var(--text);
+    }
+
+    .value a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    .value a:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 900px) {
+      .wrap {
+        grid-template-columns: 1fr;
+      }
+
+      .profile {
+        display: grid;
+        grid-template-columns: auto 1fr;
+        gap: 16px;
+        align-items: center;
+        text-align: left;
+      }
+
+      .avatar {
+        width: 108px;
+        height: 108px;
+        margin: 0;
+        font-size: 34px;
+      }
+    }
+
+    @media (max-width: 560px) {
+      .topbar {
+        padding: 10px 14px;
+      }
+
+      .wrap {
+        margin-top: 14px;
+        padding: 0 12px;
+      }
+
+      .profile {
+        grid-template-columns: 1fr;
+      }
+
+      .avatar {
+        width: 132px;
+        height: 132px;
+        margin: 0 auto;
+        font-size: 40px;
+      }
+
+      .name, h1 {
+        font-size: 28px;
+      }
+
+      .readme {
+        padding: 18px 16px;
+      }
+    }
+
+    @keyframes rise {
+      from {
+        opacity: 0;
+        transform: translateY(12px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
 </head>
 <body>
-  <h1>Hello, this is my GitHub Pages homepage.</h1>
-  <p>Welcome to my personal website.</p>
+  <div class="topbar">Overview</div>
+
+  <main class="wrap">
+    <section class="card profile">
+      <div class="avatar" aria-hidden="true">WS</div>
+      <div>
+        <p class="name">Wenhe Si</p>
+        <p class="email">Siwh2023@shanghaitech.edu.cn</p>
+      </div>
+    </section>
+
+    <section class="card readme">
+      <span class="repo-tag">WenheSi / README.md</span>
+      <h1>Hi there</h1>
+      <hr class="divider">
+      <p class="block"><span class="label">Name</span><span class="value">Wenhe Si</span></p>
+      <p class="block"><span class="label">Email</span><span class="value"><a href="mailto:Siwh2023@shanghaitech.edu.cn">Siwh2023@shanghaitech.edu.cn</a></span></p>
+    </section>
+  </main>
 </body>
 </html>
